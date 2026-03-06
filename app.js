@@ -1,7 +1,7 @@
 // Configure Gun with public relays to ensure GitHub Pages functions across devices
 // and uses localStorage as fallback/cache.
 const peers = [
-    window.location.origin + '/gun', // Local relay for instant cross-browser sync
+    'ws://localhost:8000/gun', // Custom Python Relay for cross-browser sync
     'https://gun-manhattan.herokuapp.com/gun',
     'https://relay.peer.ooo/gun'
 ];

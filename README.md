@@ -31,22 +31,27 @@ npm install
 
 ### Running the Application
 
-To experience the real-time sync, you need to run the local relay server.
+To experience the real-time sync, you need to run both the frontend and the local Python relay server.
 
-1. Start the server:
+1. **Start the Python Relay Server:**
+   Open a terminal, navigate to `python_relay` and run:
+   ```bash
+   cd python_relay
+   uv run server.py
+   ```
+   *This starts the local socket server on port 8000.*
 
-```bash
-npm start
-```
-*(Alternatively, you can run `node server.js`)*
+2. **Start the Frontend Web App:**
+   Open a separate terminal and start a static web server:
+   ```bash
+   npx serve .
+   ```
+   *(Note: You can use Live Server or any other static host since the app logic is purely client-side).*
 
-> ⚠️ **IMPORTANT: Do not use `npx serve .` or Live Server**
-> You must run the app using `node server.js` (or `npm start`). Tools like `npx serve .` only spin up a standard web server for your raw HTML/JS files. They **do not** spin up the Gun.js WebSocket relay that handles the cross-browser real-time syncing, which will cause the database to silently fall back to offline-only mode.
+3. Open your web browser and navigate to:
+   **http://localhost:3000** (or whatever port `serve` outputs).
 
-2. Open your web browser and navigate to:
-   **http://localhost:3000**
-
-3. **To test instant sync:** Open an Incognito Window or a completely different web browser (e.g., Chrome and Edge) and navigate to the same URL. Log in simultaneously on both screens.
+4. **To test instant sync:** Open an Incognito Window or a completely different web browser (e.g., Chrome and Edge) and navigate to the same URL. Log in simultaneously on both screens.
 
 ## 🧪 Testing
 
