@@ -40,6 +40,9 @@ npm start
 ```
 *(Alternatively, you can run `node server.js`)*
 
+> ⚠️ **IMPORTANT: Do not use `npx serve .` or Live Server**
+> You must run the app using `node server.js` (or `npm start`). Tools like `npx serve .` only spin up a standard web server for your raw HTML/JS files. They **do not** spin up the Gun.js WebSocket relay that handles the cross-browser real-time syncing, which will cause the database to silently fall back to offline-only mode.
+
 2. Open your web browser and navigate to:
    **http://localhost:3000**
 
